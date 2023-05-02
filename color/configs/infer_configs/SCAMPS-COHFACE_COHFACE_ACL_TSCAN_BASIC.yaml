@@ -1,0 +1,95 @@
+BASE: ['']
+TOOLBOX_MODE: "only_test"      # "train_and_test"  or "only_test"
+TRAIN:
+  BATCH_SIZE: 4
+  EPOCHS: 30
+  LR: 9e-3
+  MODEL_FILE_NAME: SCAMPS-COHFACE_SCAMPS_ACL_tscan
+  DATA:
+    FS: 30
+    DATASET: SCAMPS
+    DO_PREPROCESS: False               # if first time, should be true
+    DATA_FORMAT: NDCHW
+    DATA_PATH: "/scratch/manne.sa/data/ACL_23/SCAMPS/train"          # Raw dataset path, need to be updated
+    CACHED_PATH: "/scratch/manne.sa/data/ACL_23/SCAMPS/scamps_proc/train"    # Processed dataset save path, need to be updated
+    EXP_DATA_NAME: ""
+    BEGIN: 0.0
+    END: 1.0
+    PREPROCESS :
+      DATA_TYPE: ['DiffNormalized','Standardized']
+      LABEL_TYPE: DiffNormalized
+      DO_CHUNK: True
+      CHUNK_LENGTH: 180
+      DYNAMIC_DETECTION: False
+      DYNAMIC_DETECTION_FREQUENCY : 180
+      CROP_FACE: True
+      LARGE_FACE_BOX: True
+      LARGE_BOX_COEF: 1.5
+      H: 72
+      W: 72
+VALID:
+  DATA:
+    FS: 30
+    DATASET: SCAMPS
+    DO_PREPROCESS: False                  # if first time, should be true
+    DATA_FORMAT: NDCHW
+    DATA_PATH: "/scratch/manne.sa/data/ACL_23/SCAMPS/val"          # Raw dataset path, need to be updated
+    CACHED_PATH: "/scratch/manne.sa/data/ACL_23/SCAMPS/scamps_proc/val"    # Processed dataset save path, need to be updated
+    EXP_DATA_NAME: ""
+    BEGIN: 0.0
+    END: 1.0
+    PREPROCESS:
+      DATA_TYPE: [ 'DiffNormalized','Standardized' ]
+      LABEL_TYPE: DiffNormalized
+      DO_CHUNK: True
+      CHUNK_LENGTH: 180
+      DYNAMIC_DETECTION: False
+      DYNAMIC_DETECTION_FREQUENCY : 180
+      CROP_FACE: True
+      LARGE_FACE_BOX: True
+      LARGE_BOX_COEF: 1.5
+      H: 72
+      W: 72
+TEST:
+  METRICS: ['MAE','RMSE','MAPE','Pearson']
+  USE_LAST_EPOCH: False                     # to use provided validation dataset to find the best epoch, should be false
+  DATA:
+    FS: 30
+    DATASET: ACL
+    DO_PREPROCESS: False                    # if first time, should be true
+    DATA_FORMAT: NDCHW
+    DATA_PATH: "/scratch/manne.sa/data/ACL_23/ACL/dataset/"          # Raw dataset path, need to be updated
+    CACHED_PATH: "/scratch/manne.sa/data/ACL_23/ACL/proc-dataset/"    # Processed dataset save path, need to be updated
+    EXP_DATA_NAME: ""
+    BEGIN: 0.0
+    END: 1.0
+    PREPROCESS:
+      DATA_TYPE: [ 'DiffNormalized','Standardized' ] #['Raw']
+      LABEL_TYPE: DiffNormalized #Raw 
+      DO_CHUNK: True
+      CHUNK_LENGTH: 180
+      DYNAMIC_DETECTION: False
+      DYNAMIC_DETECTION_FREQUENCY : 180
+      CROP_FACE: False # True if face detection -> crop -> Resize pipeline has to be processed.
+      LARGE_FACE_BOX: True
+      LARGE_BOX_COEF: 1.5
+      H: 72
+      W: 72
+DEVICE: cuda:0
+NUM_OF_GPU_TRAIN: 1
+LOG:
+  PATH: runs/exp
+MODEL:
+  DROP_RATE: 0.2
+  NAME: Tscan
+  TSCAN:
+    FRAME_DEPTH: 10
+INFERENCE:
+  BATCH_SIZE: 1
+  EVALUATION_METHOD: "FFT"        # "FFT" or "peak detection"
+  # model path for SCAMPS-COHFACE model
+  #MODEL_PATH:  "/scratch/manne.sa/workspace/checkpoints/rrr/checkpoints/1403_scampsPT_cohfaceFT_v2/0603_cohface_v1/COHFACE_COHFACE_COHFACE_tscan_Epoch18.pth"
+  # model path for COHFACE model
+  MODEL_PATH:  "/scratch/manne.sa/workspace/checkpoints/rrr/checkpoints/0603_cohface_v1/COHFACE_COHFACE_COHFACE_tscan_Epoch3.pth"
+  # model path for SCAMPS model
+  #MODEL_PATH:  "/home/manne.sa/workspace/ACL_2023/rPPG-Toolbox/PreTrainedModels/SCAMPS_SizeW72_SizeH72_ClipLength180_DataTypeDiffNormalized_Standardized_LabelTypeDiffNormalized_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len180/SCAMPS_SCAMPS_SCAMPS_tscan_Epoch28.pth"
