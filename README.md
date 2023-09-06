@@ -7,7 +7,7 @@ Official repository for our paper: [Automatic Infant Respiration Estimation from
 ## Dataset details
 We provide a new manually annotated dataset of 125 videos, Annotated Infant Respiration (AIR-125), for benchmarking respiration estimation methods on infants using videos from baby monitors and Youtube. More details on the dataset generation procedure can be found in the paper.
 
-- AIR-125 can be downloaded by contacting [ACLab](https://web.northeastern.edu/ostadabbas/).
+- AIR-125 can be downloaded from [here](https://coe.northeastern.edu/Research/AClab/AIR-125/).
 
 - We also evaluate our method on an adult respiation datastet, COHFACE. The dataset can be downloaded from [here](https://www.idiap.ch/en/dataset/cohface).
 
