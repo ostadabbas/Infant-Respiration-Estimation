@@ -1,5 +1,5 @@
 # Automatic Infant Respiration Estimation from Video
-Official repository for our paper: [Automatic Infant Respiration Estimation from Video: A Deep Flow-based Algorithm and a Novel Public Benchmark](https://arxiv.org/pdf/2307.13110.pdf).
+Official repository for our paper: [Automatic Infant Respiration Estimation from Video: A Deep Flow-based Algorithm and a Novel Public Benchmark](https://arxiv.org/pdf/2307.13110.pdf), [published](https://doi.org/10.1007/978-3-031-45544-5_10) at [MICCAI](https://conferences.miccai.org/2023/en/) [PIPPI](https://pippiworkshop.github.io) 2023.
 <p align="center">
   <img src="figs/demo.png" alt="Infant respiration estimation from videos using AIRFlowNet." />
 </p>
@@ -71,10 +71,23 @@ This repository is based on [rPPG-toolbox](https://github.com/ubicomplab/rPPG-To
 
 If you find use this code or dataset for your research, please consider citing our paper:
 ```
-@article{manne2023automatic,
-  title={Automatic Infant Respiration Estimation from Video: A Deep Flow-based Algorithm and a Novel Public Benchmark},
-  author={Manne, Sai Kumar Reddy and Zhu, Shaotong and Ostadabbas, Sarah and Wan, Michael},
-  journal={arXiv preprint arXiv:2307.13110},
-  year={2023}
+@InProceedings{manne_2023_automatic,
+author="Manne, Sai Kumar Reddy
+and Zhu, Shaotong
+and Ostadabbas, Sarah
+and Wan, Michael",
+editor="Link-Sourani, Daphna
+and Abaci Turk, Esra
+and Macgowan, Christopher
+and Hutter, Jana
+and Melbourne, Andrew
+and Licandro, Roxane",
+title="Automatic Infant Respiration Estimation from Video: A Deep Flow-Based Algorithm and a Novel Public Benchmark",
+booktitle="Perinatal, Preterm and Paediatric Image Analysis",
+year="2023",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="111--120",
+isbn="978-3-031-45544-5"
 }
 ```
