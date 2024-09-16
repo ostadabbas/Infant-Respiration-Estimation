@@ -1,3 +1,5 @@
+**9/16/24 Note:** We are working on fixing issues in this repository, caused by changes in the underlying [rPPG-Toolbox](https://github.com/ubicomplab/rPPG-Toolbox). We do not have an estimated time for the fix at the moment, but those interested in infant respiration may be able to use the rPPG-Toolbox repository directly, together with our dataset. Thanks for your interest in our work, and apologies for the inconvenience. 
+
 # Automatic Infant Respiration Estimation from Video
 Official repository for our paper: [Automatic Infant Respiration Estimation from Video: A Deep Flow-based Algorithm and a Novel Public Benchmark](https://arxiv.org/pdf/2307.13110.pdf), [published](https://doi.org/10.1007/978-3-031-45544-5_10) at [MICCAI](https://conferences.miccai.org/2023/en/) [PIPPI](https://pippiworkshop.github.io) 2023.
 <p align="center">
@@ -65,7 +67,7 @@ Use relevant config files for a specific model-test_split configuration under co
 2. Run ```python main.py --config_file ./configs/infer_configs/TRAIN_VALIDATION_TEST_MODEL.yaml```
 
 ## Acknowledgement
-This repository is based on [rPPG-toolbox](https://github.com/ubicomplab/rPPG-Toolbox). We thank the authors for open sourcing their code.
+This repository is based on [rPPG-Toolbox](https://github.com/ubicomplab/rPPG-Toolbox). We thank the authors for open sourcing their code.
 
 ## Citation
 
