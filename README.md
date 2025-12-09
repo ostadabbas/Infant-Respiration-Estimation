@@ -1,3 +1,5 @@
+**10/12/25 Note:** Please see our updated [WACV'26 paper](https://arxiv.org/abs/2512.06888) and [repository](https://github.com/michaelwwan/air-400), which introduce new models and an expanded AIR-400 dataset, and hopefully resolves some of the reproducibility issues that users were having with this repository. Thanks to everyone who worked with this repo and helped us identify those issues.
+
 **9/16/24 Note:** We are working on fixing issues in this repository, caused by changes in the underlying [rPPG-Toolbox](https://github.com/ubicomplab/rPPG-Toolbox). We do not have an estimated time for the fix at the moment, but those interested in infant respiration may be able to use the rPPG-Toolbox repository directly, together with our dataset. Thanks for your interest in our work, and apologies for the inconvenience. 
 
 # Automatic Infant Respiration Estimation from Video
